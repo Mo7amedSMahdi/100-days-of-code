@@ -26,7 +26,7 @@ function App() {
               <div className='price-value'>
                 <span>$149.99</span>
               </div>
-              <div className='price-old-price'>
+              <div className='old-price'>
                 <span>$169.99</span>
               </div>
             </div>
