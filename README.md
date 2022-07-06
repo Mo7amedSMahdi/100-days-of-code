@@ -15,6 +15,6 @@ _All the designs from [frontendmentor](https://www.frontendmentor.io/)_
 
 ### Day 1
 
-Product preview card component
+Product preview card component using react
 
-### R1D2
+### Day 2
