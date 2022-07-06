@@ -11,13 +11,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/images/desktop-preview.jpg)
-![](./src/images/ScreenShot-desktop.png)
-![](./src/images/ScreenShot-mobile.png)
+![](./src/images/ScreenShot.png)
+![](./src/images/ScreenShot1.png)
 
 ### Links
 
-- Live Site URL: [](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://100-days-of-code-day-2.vercel.app/)
 
 ## My process
 
@@ -33,57 +32,54 @@ Users should be able to:
 
 ### What I learned
 
-In this Challenge I learn how to design a product card using flexbox and react, Also I learn how to window size in react and how to create react custom hooks.
+This is a nice, small project to practice handling user interactions and updating the DOM. Perfect for anyone who has learned the basics of JavaScript!
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
 ```css
-.card-content .category-title p {
-  font-size: 1.125rem;
-  font-weight: 500;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  color: var(--clr-dark-grayish-blue);
-}
+:root {
+  /* Primary Colors */
+  --clr-orange: hsl(25, 97%, 53%);
 
-.card-content .prodect-title h2 {
-  font-family: var(--font-secondary);
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: var(--clr-very-dark-blue);
-}
+  /* Neutral colors */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(217, 12%, 63%);
+  --clr-medium-gray: hsl(216, 12%, 54%);
+  --clr-light-dark-blue: hsl(213, 19%, 20%);
+  --clr-dark-blue: hsl(213, 19%, 18%);
+  --clr-very-dark-blue: hsl(216, 12%, 8%);
 
-.card-content .product-desc p {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--clr-dark-grayish-blue);
-}
+  /* Fonts */
+  --font-primary: 'Overpass', sans-serif;
 
-.card-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  gap: 1rem;
+  font-size: 10px;
 }
 ```
 
 ```js
-const [CardImage, SetCardImage] = useState(CardImageMobile);
-const size = useWindowSize();
+const [page, setPage] = useState('rating');
+const [rate, setRate] = useState(0);
+const [rateList, setRateList] = useState(list);
 
-useEffect(() => {
-  if (size.width > 768) {
-    SetCardImage(CardImageDesktop);
-  } else {
-    SetCardImage(CardImageMobile);
-  }
-}, [size.width]);
+const handleClick = (index) => {
+  const newRateList = rateList.map((item) => {
+    if (item.index === index) {
+      item.selected = !item.selected;
+    } else {
+      item.selected = false;
+    }
+    return item;
+  });
+  setRateList(newRateList);
+  setRate(index);
+};
+
+const handleSubmit = () => {
+  console.log(rate);
+  if (rate === 0) return;
+  setPage('thankyou');
+};
+if (page === 'thankyou') return <ThankYouForm rating={rate} />;
 ```
 
 ## Author
