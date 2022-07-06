@@ -1,6 +1,6 @@
 .card-container {
   padding: 1.6rem 1.6rem;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .rating-card {
@@ -72,4 +72,45 @@
 
 .card-action {
   width: 100%;
+}
+
+.thank-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--clr-dark-blue);
+  border-radius: 1rem;
+}
+
+.thank-rating {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--clr-light-dark-blue);
+  border-radius: 3rem;
+}
+
+.thank-rating p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--clr-orange);
+  text-align: center;
+  line-height: 0;
+}
+
+.thank-title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  text-align: center;
+}
+
+.thank-content {
+  font-size: 1.6rem;
+  color: var(--clr-light-gray);
+  text-align: center;
 }

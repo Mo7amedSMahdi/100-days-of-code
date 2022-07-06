@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import star from './images/icon-star.svg';
+import thanksImage from './images/illustration-thank-you.svg';
 
 function App() {
   const list = [
@@ -25,6 +26,7 @@ function App() {
       selected: false,
     },
   ];
+  const [page, setPage] = useState('rating');
   const [rate, setRate] = useState(0);
   const [rateList, setRateList] = useState(list);
 
@@ -40,6 +42,14 @@ function App() {
     setRateList(newRateList);
     setRate(index);
   };
+
+  const handleSubmit = () => {
+    console.log(rate);
+    if (rate === 0) return;
+    setPage('thankyou');
+  };
+  if (page === 'thankyou') return <ThankYouForm rating={rate} />;
+
   return (
     <div className='card-container'>
       <div className='rating-card'>
@@ -69,7 +79,12 @@ function App() {
           </ul>
         </div>
         <div className='card-action'>
-          <button type='button' className='btn btn--primary'>
+          <button
+            onClick={() => {
+              handleSubmit();
+            }}
+            type='button'
+            className='btn btn--primary'>
             submit
           </button>
         </div>
@@ -78,4 +93,24 @@ function App() {
   );
 }
 
+const ThankYouForm = ({ rating }) => {
+  return (
+    <div className='card-container'>
+      <div className='thank-form'>
+        <div className='thank-header'>
+          <img src={thanksImage} alt='mobile with card and orang circle' />
+        </div>
+        <div className='thank-rating'>
+          <p>You selected {rating} out of 5</p>
+        </div>
+        <div className='thank-title'>
+          <h2>Thank you!</h2>
+        </div>
+        <div className='thank-content'>
+          <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default App;
