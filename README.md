@@ -20,3 +20,4 @@ _All the designs from [frontendmentor](https://www.frontendmentor.io/)_
 Product preview card component using react
 
 ### Day 2
+I've submit hte Product preview card and creat an Interactive rating component using reactjs
