@@ -30,7 +30,12 @@ function App() {
   const [rate, setRate] = useState(0);
   const [rateList, setRateList] = useState(list);
 
-  const handleClick = (index) => {
+  /**
+   * If the index of the item is equal to the index of the item that was clicked, then toggle the
+   * selected property of that item. Otherwise, set the selected property of that item to false
+   * @param index - the index of the item that was clicked
+   */
+  const handleRating = (index) => {
     const newRateList = rateList.map((item) => {
       if (item.index === index) {
         item.selected = !item.selected;
@@ -43,11 +48,19 @@ function App() {
     setRate(index);
   };
 
-  const handleSubmit = () => {
+  /**
+   * If the user has not selected a rating, the function returns and does nothing. If the user has
+   * selected a rating, the function sets the page to the thank you page
+   * @returns the value of the rate variable.
+   */
+  const handleSubmitRating = () => {
     console.log(rate);
     if (rate === 0) return;
     setPage('thankyou');
   };
+
+  /* This is a ternary operator. If the page is equal to thankyou, then return the ThankYouForm
+  component. Otherwise, return the App component. */
   if (page === 'thankyou') return <ThankYouForm rating={rate} />;
 
   return (
@@ -69,7 +82,7 @@ function App() {
                 <li
                   className={item.selected ? 'active' : ''}
                   onClick={() => {
-                    handleClick(item.index);
+                    handleRating(item.index);
                   }}
                   key={index}>
                   <span>{item.index}</span>
@@ -81,7 +94,7 @@ function App() {
         <div className='card-action'>
           <button
             onClick={() => {
-              handleSubmit();
+              handleSubmitRating();
             }}
             type='button'
             className='btn btn--primary'>
