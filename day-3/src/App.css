@@ -1,0 +1,62 @@
+main {
+  padding-block: 2rem;
+}
+.app-logo {
+  position: relative;
+  top: 0;
+  left: 2rem;
+}
+
+.app-logo img {
+  max-width: 96px;
+}
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 2rem;
+}
+
+.content-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-body h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--clr-desaturated-red);
+  letter-spacing: 0.5rem;
+}
+
+.content-body h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  text-indent: center;
+  color: var(--clr-dark-grayish-red);
+}
+
+.content-body p {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--clr-desaturated-red);
+  margin-top: 1rem;
+}
