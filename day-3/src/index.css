@@ -55,7 +55,9 @@ body {
   font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--clr-very-dark-blue);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
   font-size: 1rem;
   font-weight: 400;
   display: flex;
